@@ -1,0 +1,538 @@
+///////////////////////////////////////////////////////////
+////        BUTTON
+
+// Button Rounded
+.btn-rounded {
+  background-color: $color-neutral-white;
+  padding: 1.5rem 2.3rem;
+  border-radius: 5rem;
+  cursor: pointer;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: rgba($color-neutral-white, 0.3);
+    }
+  }
+
+  @include respond(800) {
+    display: none;
+  }
+}
+
+.btn-rounded.btn-rounded--dropdown {
+  background-color: $color-primary-yello;
+  display: inline-block;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: rgba($color-primary-yello, 0.6);
+      color: $color-neutral-very-dark-desaturated-blue;
+    }
+  }
+}
+
+// Button Inline
+.btn-inline {
+  text-decoration-thickness: 0.5rem;
+  position: relative;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  //   align-content: center;
+  align-items: center;
+  padding-left: 1.5rem;
+  //   z-index: 20;
+
+  @media (hover: hover) {
+    &:hover .inline--transform {
+      background-color: rgba($color-primary-yello, 0.9);
+    }
+    &:hover .inline--stand-out {
+      background-color: rgba($color-primary-soft-red, 0.9);
+    }
+  }
+
+  .inline {
+    position: relative;
+    border-radius: 1rem;
+    height: 1rem;
+    width: 120%;
+    bottom: 25%;
+    left: 0;
+    z-index: -1;
+    &--transform {
+      background-color: rgba($color-primary-yello, 0.3);
+    }
+    &--stand-out {
+      background-color: rgba($color-primary-soft-red, 0.3);
+    }
+  }
+
+  @include respond(800) {
+    align-self: center;
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        CORE SERVICE FEATURE
+.core-services {
+  &__feature {
+    flex: 0 0 50%;
+
+    &-description {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-content {
+      //   max-height: 28rem;
+      //   height: 100%;
+      max-width: 44rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include respond(1000) {
+        max-width: 35rem;
+      }
+      @include respond(800) {
+        max-width: 40rem;
+        align-items: center;
+        padding: 10rem 0;
+      }
+      @include respond(800) {
+        padding: 5rem 0;
+      }
+      @include respond(450) {
+        padding: 5rem 1rem;
+      }
+    }
+
+    @include respond(800) {
+      &:nth-child(1) {
+        order: 2;
+      }
+      &:nth-child(2) {
+        order: 1;
+      }
+      &:nth-child(3) {
+        order: 3;
+      }
+      &:nth-child(4) {
+        order: 4;
+      }
+      &:nth-child(5) {
+        order: 5;
+      }
+      &:nth-child(6) {
+        order: 6;
+      }
+    }
+  }
+
+  &__title,
+  &__summary {
+    margin-bottom: 5rem;
+    @include respond(1000) {
+      margin-bottom: 3rem;
+    }
+    @include respond(800) {
+      margin-bottom: 5rem;
+    }
+    @include respond(330) {
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+// Core service Offering
+
+.cropper {
+  @include respond(800) {
+    max-width: 80rem;
+    max-height: 85rem;
+    overflow: hidden;
+  }
+}
+.core-services__offering {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  &-content {
+    position: absolute;
+    max-height: 13rem;
+    height: 100%;
+    top: 67%;
+    max-width: 33rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include respond(1080) {
+      top: 60%;
+    }
+    @include respond(1080) {
+      top: 55%;
+    }
+    @include respond(800) {
+      max-height: 18rem;
+    }
+    @include respond(650) {
+      top: 60%;
+    }
+    @include respond(570) {
+      top: 63%;
+    }
+    @include respond(500) {
+      max-height: 13rem;
+    }
+    @include respond(400) {
+      top: 60%;
+    }
+    @include respond(360) {
+      padding: 0 1rem;
+    }
+  }
+
+  //   @include respond(800) {
+  //     max-height: 80rem;
+  //   }
+}
+
+.core-services__photo {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+///////////////////////////////////////////////////////////
+////        DROPDOWN
+.dropdown {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+
+  &__container {
+    flex-direction: column;
+    align-items: flex-end;
+    display: none;
+    position: absolute;
+    top: 5rem;
+
+    @include respond(800) {
+      &.show {
+        display: flex;
+      }
+    }
+  }
+
+  &__tri {
+    width: 0;
+    height: 0;
+    border-left: 3rem solid transparent;
+    border-bottom: 3rem solid $color-neutral-white;
+    z-index: 1;
+    margin-bottom: -0.5rem;
+    @include respond(300) {
+      margin-bottom: -1.5rem;
+      //   border-left: 2.5rem solid transparent;
+      //   border-bottom: 2.5rem solid $color-neutral-white;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__square {
+    background-color: $color-neutral-white;
+    padding: 4.5rem 13rem;
+
+    @include respond(500) {
+      padding: 4.5rem 10rem;
+    }
+    @include respond(400) {
+      padding: 4rem 5rem;
+    }
+    @include respond(300) {
+      padding: 2.5rem 4.5rem;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__nav-item {
+    margin-bottom: 4.5rem;
+    & .dropdown__nav-link {
+      @media (hover: hover) {
+        &:hover {
+          color: $color-neutral-very-dark-desaturated-blue;
+        }
+      }
+    }
+
+    @include respond(300) {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  @include respond(800) {
+    display: flex;
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        FOOTER WRAPPER
+.footer {
+  &__wrapper {
+    background-color: lighten($color-primary-moderate-cyan-footer, 30%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+
+    padding: 7rem 0;
+    @include respond(650) {
+      padding: 5rem 0;
+    }
+  }
+
+  &__share-group {
+    display: flex;
+    max-width: 17rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        GALLERY PHOTO
+.gallery__pic {
+  flex: 0 0 25%;
+
+  @include respond(800) {
+    flex: 0 0 50%;
+  }
+}
+
+.gallery__photo {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+///////////////////////////////////////////////////////////
+////        HEADER
+.header {
+  &__bg {
+    height: 100%;
+    background-size: cover;
+    // background-size: 100%;
+    // background-size: 144rem 80rem;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-position: center top;
+
+    // @include respond(750) {
+    //   //   background-size: 75rem 107.6rem;
+    //   background-size: cover;
+    //   //   background-size: contain;
+    //   background-position: center top;
+    // }
+    // @include respond(580) {
+    //   //   background-size: 75rem 107.6rem;
+    //   //   background-size: contain;
+    //   //   background-size: contain;
+    //   background-position: center top;
+    //   //   height: initial;
+    // }
+    @include respond(375) {
+      //   background-size: 75rem 107.6rem;
+      background-size: 100%;
+      //   background-size: contain;
+      //   background-position: center bottom 50%;
+      //   height: initial;
+    }
+  }
+
+  &__main-title {
+    margin-bottom: 9rem;
+    // @include respond(500) {
+    //   margin-bottom: 1.5rem;
+    // }
+    @include respond(375) {
+      margin-bottom: 3.5rem;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        ICONS
+
+// Header Main Icon
+.header__main-icon {
+  height: 11rem;
+  @include respond(310) {
+    height: 7rem;
+  }
+}
+
+//Dropdown
+.dropdown__hamburger {
+  height: 3rem;
+  width: 3rem;
+  display: none;
+
+  @include respond(800) {
+    display: inline-block;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    fill: $color-neutral-white;
+
+    &.activated {
+      fill: darken($color-primary-yello, 5%);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        fill: $color-primary-yello;
+      }
+    }
+  }
+}
+
+.footer__share-icon {
+  height: 2.2rem;
+  width: 2.2rem;
+  fill: darken($color-primary-moderate-cyan-footer, 8%);
+  cursor: pointer;
+
+  @media (hover: hover) {
+    &:hover {
+      fill: $color-neutral-white;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        LOGO
+.svg-logo {
+  width: 17.5rem;
+  height: 3rem;
+}
+
+//header
+.header__logo-icon {
+  margin-right: auto;
+  fill: $color-neutral-white;
+}
+
+.footer__logo-icon {
+  fill: darken($color-primary-moderate-cyan-footer, 8%);
+}
+
+///////////////////////////////////////////////////////////
+////        Nav
+.nav__list {
+  display: flex;
+  list-style: none;
+}
+
+// Header Nav
+.header__nav-list {
+  @include respond(800) {
+    display: none;
+  }
+}
+// Header Nav-item
+.header__nav-item {
+  margin-right: 5rem;
+}
+
+// Footer Nav
+.footer__nav-item {
+  &:not(:last-child) {
+    margin-right: 6rem;
+    @include respond(375) {
+      margin-right: 2rem;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        TESTIMONIAL
+.testimonial {
+  flex: 0 0 31%;
+
+  &:not(:last-child) {
+    @include respond(800) {
+      margin-bottom: 8rem;
+    }
+  }
+
+  // Wrapper
+  &__wrapper {
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: space-between;
+    @include respond(1080) {
+      height: 40rem;
+    }
+    @include respond(800) {
+      height: 35rem;
+    }
+    // @include respond(375) {
+    //   height: 37.5rem;
+    // }
+    // @include respond(300) {
+    //   height: 43rem;
+    // }
+  }
+
+  // Testimonial Photo
+  &__photo {
+    width: 8rem;
+    height: 8rem;
+    margin-bottom: 6.5rem;
+  }
+  &__pic {
+    max-width: 100%;
+    border-radius: 50%;
+    max-height: 100%;
+    display: block;
+  }
+
+  &__summary {
+    // justify-self: stretch;
+    vertical-align: top;
+    // margin-bottom: auto;
+  }
+
+  // Testimonial Client Details
+  &__client {
+    margin-top: auto;
+    &-name {
+      margin-bottom: 1rem;
+    }
+
+    // &-position {
+    // }
+  }
+  @include respond(1080) {
+    flex: 0 0 30%;
+  }
+  @include respond(800) {
+    max-width: 37.5rem;
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        TITLES

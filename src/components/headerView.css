@@ -1,0 +1,20 @@
+/*  Header Background */
+.header__bg{
+    background-image: url('../images/desktop/image-header.jpg');
+}
+/* 
+@media screen and (max-width: 46.875em) {
+    .header__bg{
+        background-image: url('../images/mobile/image-header.jpg');
+    }
+} */
+@media screen and (max-width: 31.25em) {
+    .header__bg{
+        background-image: url('../images/mobile/image-header.jpg');
+    }
+}
+/* @media screen and (max-width: 23.4375em) {
+    .header__bg{
+        background-image: url('../images/mobile/image-header.jpg');
+    }
+} */

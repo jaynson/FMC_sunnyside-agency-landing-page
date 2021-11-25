@@ -1,0 +1,165 @@
+///////////////////////////////////////////////////////////
+////        CONTAINER
+
+// container
+.container {
+  padding: 0;
+}
+
+// Component
+.component {
+  max-width: $main-component-max-width-desktop;
+  @include margin-centralize;
+
+  @include respond(800) {
+    max-width: $main-component-max-width-mobile-800px;
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        HEADER
+.header {
+  // height: 100%;
+  // Header Background
+  height: $header-height-desktop;
+  &__bg {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // SECTION - Header-Top
+  &__top {
+    display: flex;
+    align-items: center;
+    padding: 3rem 4rem;
+    margin-bottom: 8rem;
+    @include respond(800) {
+      padding: 3rem 2rem;
+      align-items: flex-start;
+    }
+    @include respond(600) {
+      padding: 3rem 2rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+    // @include respond(520) {
+    //   margin-bottom: -1rem;
+    // }
+  }
+
+  // SECTION - Header-Bottom
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include respond(650) {
+    height: 120vw;
+    // max-height: 58rem;
+  }
+  @include respond(500) {
+    height: $header-height-mobile;
+    // height: $header-height-desktop;
+    // max-height: 58rem;
+  }
+  @include respond(375) {
+    height: 130vw;
+  }
+  // @include respond(350) {
+  //   height: $header-height-mobile - 15;
+  // }
+  // @include respond(330) {
+  //   height: $header-height-mobile - 20;
+  // }
+  // @include respond(300) {
+  //   height: $header-height-mobile - 25;
+  // }
+}
+
+///////////////////////////////////////////////////////////
+////        MAIN
+.main {
+  &-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+///////////////////////////////////////////////////////////
+////        MAIN - CORE SERVICES
+.core-services {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include respond(800) {
+      flex-direction: column;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        MAIN - TESTIMONIALS
+.testimonial-view {
+  padding: 16.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__wrapper {
+    margin-top: 8rem;
+    display: flex;
+    justify-content: space-between;
+    // align-items: flex-start;
+    // align-content: flex-start;
+    @include respond(800) {
+      flex-direction: column;
+      align-items: center;
+      // align-content: center;
+    }
+  }
+
+  @include respond(1440) {
+    padding: 16.5rem 15rem;
+  }
+  @include respond(1230) {
+    padding: 16.5rem 10rem;
+  }
+  @include respond(1130) {
+    padding: 10rem 7.5rem;
+  }
+  @include respond(800) {
+    padding: 10rem 3rem;
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        MAIN - GALLERY
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+///////////////////////////////////////////////////////////
+////        FOOTER
+.footer {
+  // background-color: $color-primary-moderate-cyan-footer;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__logo-icon {
+    margin-bottom: 4rem;
+    @include respond(500) {
+      margin-bottom: 3.5rem;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 8rem;
+    @include respond(500) {
+      margin-bottom: 5rem;
+    }
+  }
+}

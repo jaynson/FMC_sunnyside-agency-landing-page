@@ -1,0 +1,221 @@
+:root {
+  font-size: $default-text-size;
+}
+
+body {
+  line-height: 1.4;
+  // font-family: 'Fraunces', sans-serif;
+  font-size: 1.8rem;
+
+  .ff-barlow {
+    font-family: 'Barlow', sans-serif;
+  }
+  .ff-fraunces {
+    font-family: 'Fraunces', serif;
+  }
+
+  // Navigation
+  .nav-item {
+    a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    &.header__nav-item a {
+      color: $color-neutral-white;
+    }
+    &.footer__nav-item a {
+      color: $color-primary-moderate-cyan-footer;
+      @media (hover: hover) {
+        &:hover {
+          color: $color-neutral-white;
+        }
+      }
+    }
+
+    &.dropdown__nav-item a {
+      font-size: 2.2rem;
+      color: $color-neutral-grayish-blue;
+    }
+  }
+
+  //Buttons
+  .btn {
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &-rounded {
+      font-weight: 700;
+      font-size: 1.7rem;
+      @media (hover: hover) {
+        &:hover {
+          color: $color-neutral-white;
+        }
+      }
+    }
+
+    &-inline a {
+      font-weight: 800;
+      color: $color-neutral-very-dark-desaturated-blue;
+      font-size: 1.7rem;
+      @include respond(820) {
+        font-size: 1.5rem;
+      }
+      @include respond(800) {
+        font-size: 1.7rem;
+      }
+    }
+  }
+
+  // Header Main
+  .header__main-title {
+    color: $color-neutral-white;
+    font-weight: 800;
+    font-size: 5.5rem;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    @include respond(800) {
+      font-size: 4.5rem;
+    }
+    @include respond(700) {
+      font-size: 4.2rem;
+    }
+    @include respond(400) {
+      font-size: 3.8rem;
+    }
+    @include respond(375) {
+      font-size: 3rem;
+    }
+    @include respond(310) {
+      font-size: 3rem;
+      letter-spacing: 0.4rem;
+    }
+  }
+
+  // COre Service Feature
+  .core-services {
+    @include style-font-size('title', 4);
+    @include style-font-size('summary', 1.7);
+
+    &__title {
+      color: $color-neutral-very-dark-desaturated-blue;
+      font-weight: 900;
+    }
+    &__summary {
+      font-weight: 600;
+      color: $color-neutral-very-dark-grayish-blue;
+      line-height: 1.7;
+    }
+
+    @include respond(900) {
+      @include style-font-size('title', 3);
+    }
+    @include respond(820) {
+      @include style-font-size('title', 2.7);
+      @include style-font-size('summary', 1.5);
+    }
+    @include respond(800) {
+      text-align: center;
+      @include style-font-size('title', 4);
+      @include style-font-size('summary', 1.7);
+    }
+    @include respond(500) {
+      text-align: center;
+      @include style-font-size('title', 3);
+      @include style-font-size('summary', 1.6);
+    }
+    @include respond(375) {
+      text-align: center;
+      @include style-font-size('title', 2.4);
+      @include style-font-size('summary', 1.5);
+    }
+  }
+
+  //Core Service Offerings
+  .core-services__offering {
+    &-content {
+      text-align: center;
+    }
+
+    &--gfx {
+      color: $color-primary-dark-saturated-cyan-gfx;
+    }
+    &--photography {
+      color: $color-primary-dark-blue-photo;
+    }
+    &-title {
+      font-size: 3rem;
+      font-weight: 900;
+      @include respond(900) {
+        font-size: 2.5rem;
+      }
+      @include respond(800) {
+        font-size: 3rem;
+      }
+      @include respond(500) {
+        font-size: 2.6rem;
+      }
+      @include respond(375) {
+        font-size: 2.2rem;
+      }
+    }
+    &-description {
+      font-size: 1.6rem;
+      font-weight: 600;
+      @include respond(800) {
+        font-size: 1.7rem;
+      }
+      @include respond(500) {
+        font-size: 1.6rem;
+      }
+      @include respond(375) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  // Testimonial View
+  .testimonial-view {
+    &__title {
+      font-size: 2.1rem;
+      letter-spacing: 0.6rem;
+      text-transform: uppercase;
+      color: $color-neutral-grayish-blue;
+      font-weight: 800;
+      text-align: center;
+    }
+  }
+
+  //Testimonial
+  .testimonial {
+    text-align: center;
+
+    //summary
+    &__summary {
+      font-weight: 600;
+      color: $color-neutral-very-dark-grayish-blue;
+      line-height: 1.6;
+      @include respond(375) {
+        font-size: 1.5rem;
+      }
+    }
+    &__client {
+      &-name {
+        color: $color-neutral-very-dark-desaturated-blue;
+        font-weight: 800;
+        @include respond(375) {
+          font-size: 1.5rem;
+        }
+      }
+      &-position {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: $color-neutral-grayish-blue;
+        @include respond(375) {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
